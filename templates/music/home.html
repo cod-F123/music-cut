@@ -6,22 +6,23 @@
 
         <div class="label"> جدید ترین</div>
         <div class="cart-hub">
-                
+            <div>     
                 {% for audio in audios %}
                 <div class="audio-cart">
-                    <a href="#"><img src="{{audio.image.url}}" alt="img"></a>
+                    <a href="{% url 'music:detail' audio.slug %}"><img src="{{audio.image.url}}" alt="img"></a>
                     <div class="descript">
                         <span><a href="/" class="name">{{audio.name}}</a></span>
                         <span><a href="/">{{audio.singer}}</a></span>
                     </div>
                 </div>
                 {% endfor %}
-                    
+            </div>        
                 <span class="item-more"><a href="#">بیشتر <span class="un-line"></span></a></span>
             
         </div>
         <div class="label">رمیکس</div>
         <div class="cart-hub">
+            <div>
                 <div class="audio-cart">
                     <a href="#"><img src="" alt="img"></a>
                     <div class="descript">
@@ -64,6 +65,7 @@
                         <span><a href="">author</a></span>
                     </div>
                 </div>
+            </div>
                 <span class="item-more"><a href="#">بیشتر <span class="un-line"></span></a></span>
         </div>
     </div>

@@ -6,12 +6,15 @@
 body{
     background-color: #0A192F;
     font-family: vazir;
+    margin: 0px;
+    padding: 0px;
 }
 
 .container{
     display:flex;
     margin:0px 40px;
     flex-direction: column;
+    padding: 0;
 }
 
 nav{
@@ -149,13 +152,38 @@ nav div{
 
 .cart-hub{
     width: 100%;
-    height: 300px;
+    height: 305px;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     position: relative;
-    
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+    flex-direction: row-reverse;
 }
+
+.cart-hub > div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 3px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #0A192F;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .audio-cart{
     width: 229px;
@@ -230,7 +258,7 @@ nav div{
 
 .item-more{
     position: absolute;
-    left: 0;
+    left: 5px;
     top: -38px;
 }
 
@@ -240,7 +268,6 @@ nav div{
     text-decoration: none;
     transition: all 300ms;
     position: relative;
-    margin-left: 5px;
 }
 
 .un-line{
@@ -257,3 +284,21 @@ nav div{
     height: 1px;
 }
 
+.margin90t{
+    margin-top: 90px !important;
+}
+
+@media (max-width:530px){
+    .audio-cart{
+        width: 166px;
+        margin: 2px;
+        height: 240px;
+    }
+    .container{
+        margin-right: 10px;
+    }
+
+    .cart-hub{
+        height: 250px;;
+    }
+}
