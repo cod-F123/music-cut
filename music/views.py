@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
+from .models import Audio
 # Create your views here.
 
 def home_page(request):
-    return render(request,"music/home.html",{})
+    audios = Audio.objects.all()
+    return render(request,"music/home.html",{"audios":audios})
