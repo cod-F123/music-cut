@@ -5,16 +5,16 @@
 
 body{
     background-color: #0A192F;
+    font-family: vazir;
 }
 
 .container{
     display:flex;
-    justify-content: center;
     margin:0px 40px;
+    flex-direction: column;
 }
 
 nav{
-    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0px 22px;
@@ -23,7 +23,11 @@ nav{
     height: 60px;
     align-items: center;
     border-radius: 13px;
-    margin: 10px 0px;
+    margin: 10px 48px;
+    position: fixed;
+    z-index: 40;
+    left: 0;
+    right: 0;
 }
 
 nav div{
@@ -121,8 +125,12 @@ nav div{
 }
 
 @media (max-width:900px) {
+    .container{
+        margin : 0px 21px
+    }
     nav{
         padding: 0px 2px;
+        margin: 10px 30px;
     }
     .list-item{
         display: none;
@@ -138,3 +146,114 @@ nav div{
         margin-left: 2px;
     }
 }
+
+.cart-hub{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    
+}
+
+.audio-cart{
+    width: 229px;
+    height: 290px;
+    background-color: #162A4D;
+    border:2px solid #8892B0;
+    border-radius: 8px;
+    margin-left: 5px;
+    box-shadow: 0px 0px 6px #0f7df3;
+    transition: box-shadow 400ms ease-in;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    padding: 0px;
+}
+
+.audio-cart img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.audio-cart a{
+    width: 100%;
+    height: 100%;
+}
+
+
+.descript{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: #e6f1ffd4;
+    bottom: 0px;
+    border-end-end-radius: 7px;
+    border-end-start-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.descript a{
+    text-decoration: none;
+    color: #0A192F;
+}
+
+
+
+.noMargin{
+    margin: 0;
+    width: 100%;
+}
+
+.label{
+    text-align: right;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-top: 30px;
+}
+
+.item-more{
+    position: absolute;
+    left: 0;
+    top: -38px;
+}
+
+.item-more a{
+    font-size: 20px;
+    color: #E6F1FF;
+    text-decoration: none;
+    transition: all 300ms;
+    position: relative;
+    margin-left: 5px;
+}
+
+.un-line{
+    width: 0%;
+    bottom: 0;
+    height: 0px;
+    background-color: #E6F1FF;
+    display: block;
+    transition: width 400ms;
+}
+
+.item-more a:hover .un-line{
+    width: 100%;
+    height: 1px;
+}
+
