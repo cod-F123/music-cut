@@ -52,7 +52,7 @@ class Audio(models.Model):
         # crate slug
         if not self.slug:
             random_num = random.randint(1000,10000)
-            self.slug = slugify(str(self.name)) + "-" + str(self.singer) + "-" + str(random_num)
+            self.slug = slugify(self.name) + "-" + str(self.singer) + "-" + str(random_num)
             self.save()
 
 

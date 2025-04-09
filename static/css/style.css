@@ -12,7 +12,7 @@ body{
 
 .container{
     display:flex;
-    margin:0px 40px;
+    margin:0px 48px;
     flex-direction: column;
     padding: 0;
 }
@@ -155,11 +155,11 @@ nav div{
     height: 305px;
     display: flex;
     align-items: center;
-    position: relative;
     overflow-x: auto;
     overflow-y: hidden;
     margin-bottom: 10px;
     flex-direction: row-reverse;
+    padding-right: 2px;
 }
 
 .cart-hub > div{
@@ -186,7 +186,7 @@ nav div{
   }
 
 .audio-cart{
-    width: 229px;
+    width: 208px;
     height: 290px;
     background-color: #162A4D;
     border:2px solid #8892B0;
@@ -197,14 +197,15 @@ nav div{
     display: flex;
     align-items: center;
     flex-direction: row;
-    position: relative;
     padding: 0px;
+    position: relative;
 }
 
 .audio-cart img{
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 .audio-cart a{
@@ -217,7 +218,7 @@ nav div{
     position: absolute;
     width: 100%;
     height: 80px;
-    background-color: #e6f1ffd4;
+    background-color: #b5b9bdd4;
     bottom: 0px;
     border-end-end-radius: 7px;
     border-end-start-radius: 7px;
@@ -254,12 +255,13 @@ nav div{
     font-size: 20px;
     margin-right: 5px;
     margin-top: 30px;
+    z-index: 0;
+    position: relative;
 }
 
 .item-more{
     position: absolute;
-    left: 5px;
-    top: -38px;
+    left: 0px;
 }
 
 .item-more a{
@@ -299,6 +301,162 @@ nav div{
     }
 
     .cart-hub{
-        height: 250px;;
+        height: 260px;;
+    }
+    .item-search{
+        display: none;
+    }
+    nav{
+        margin:10px 10px;
+    }
+}
+
+
+.detail-div{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #022152;;
+    border-radius: 8px;
+    border: 2px solid #6F42C1;
+    box-shadow: 0px 0px 5px #007bff;
+}
+
+.container-center{
+    align-items: center;
+}
+
+.image-detail{
+    width: 63%;
+    height: 470px;
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    box-shadow: 0px 0px 5px #00D1ff;
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+
+.image-detail img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.comments-hub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    max-height: 700px;
+    overflow-y: auto ;
+    background-color: #022152;
+    margin-left: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.audio-more{
+    width: 420px;
+    height: 470px;
+    display: flex;
+    background-color: #022152;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.audio-player {
+    background: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.play-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider {
+    width: 100px;
+    cursor: pointer;
+}
+
+.audio-more span{
+    padding: 10px 5px;
+    background-color: #0f7df3;
+    color: #fff;
+    display: inline-block;
+    text-align: right;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+
+
+
+.audio-name h1{
+    font-size: 15px;
+    padding: 0;
+    font-weight: 400;
+    margin: 0;
+}
+
+.descripe-detail{
+    width: 80%;
+    height: 400px;
+    background-color: #0e447e;
+    border-radius: 5px;
+    padding: 10px;
+    color: #E6F1FF;
+}
+
+@media (max-width:737px){
+    .container-row{
+        flex-direction: column;
+    }
+    .comments-hub{
+        margin: 0;
+        margin-top: 10px;
+        width: 100%;
+        height: 200px;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width:604px){
+    .detail-div{
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    .descripe-detail{
+        width: auto;
+        min-width: 300px;
+    }
+    .audio-more{
+        width: auto;
+    }
+    .image-detail {
+        width: 90%;
     }
 }

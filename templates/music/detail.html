@@ -3,7 +3,94 @@
 
 {% block content %}
     <div class="container noMargin margin90t">
-        <h3>{{audio.name}}</h3>
+        <div class="container-row">
+            
+                <div class="detail-div">
+                    <div class="image-detail" >
+                        <img src="{{audio.image.url}}" alt="img">
+                        <div class="audio-player">
+                            <button class="play-btn">&#9654;</button>
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
+                        <audio class="custom-audio" >
+                            <source src="{{audio.audio.url}}">
+                        </audio>
+                    <div class="audio-more">
+                         <div class="info-audio">
+                            <span class="audio-name">
+                                <h1>{{audio.name}}</h1>
+                            </span>
+                            <span>
+                                {{audio.singer}}
+                            </span>
+                            <span>
+                                {{audio.category}}
+                            </span>
+                         </div>
+                         <p class="descripe-detail">
+                            {{audio.description}}
+                         </p>
+                    </div>
+                </div>
+            
+                <div class="comments-hub">
+                    <p>نظرات</p>
+                </div>
+        </div>
+        <div class="label"> <span class="item-more"><a href="#">بیشتر <span class="un-line"></span></a></span> بیشتر از {{audio.singer}}</div>
+        <div class="cart-hub">
+            <div>
+                {% for audio_s in audio.singer.audio_set.all %}
+                    <div class="audio-cart">
+                        <a href="{% url 'music:detail' audio_s.slug %}"><img src="{{audio_s.image.url}}" alt="img"></a>
+                        <div class="descript">
+                            <span><a href="{% url 'music:detail' audio_s.slug %}" class="name">{{audio_s.name}}</a></span>
+                            <span><a href="">{{audio_s.singer}}</a></span>
+                        </div>
+                    </div>
+                {% endfor %}
+               
+    
+            </div>
+                
+        </div>
+        <div class="label"> <span class="item-more"><a href="#">بیشتر <span class="un-line"></span></a></span>{{audio.category}}</div>
+        <div class="cart-hub">
+            <div>
+                {% for audio_c in audio.category.audio_set.all %}
+                    <div class="audio-cart">
+                        <a href="{% url 'music:detail' audio_c.slug %}"><img src="{{audio_c.image.url}}" alt="img"></a>
+                        <div class="descript">
+                            <span><a href="{% url 'music:detail' audio_c.slug %}" class="name">{{audio_c.name}}</a></span>
+                            <span><a href="">{{audio_c.singer}}</a></span>
+                        </div>
+                    </div>
+                {% endfor %}
+               
+    
+            </div>
+                
+        </div>
     </div>
+
+    <script>
+        const playBtn = document.getElementsByClassName("play-btn")[0];
+        const volumeSlide = document.getElementsByClassName("volume-slider")[0];
+        const audio = document.getElementsByClassName("custom-audio")[0];
+        playBtn.addEventListener("click",()=>{
+            if( audio.paused ){
+                audio.play();
+                playBtn.innerHTML ="&#10074;&#10074;";
+            }else{
+                audio.pause();
+                playBtn.innerHTML = "&#9654;";
+            }
+        });
+
+        volumeSlide.addEventListener("input",()=>{
+            audio.volume = volumeSlide.value;
+        })
+    </script>
 {% endblock content %}
     
