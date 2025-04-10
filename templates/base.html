@@ -17,7 +17,11 @@
                     <li><a href="#" class="item">دسته بندی ها</a></li>
                     <li><a href="#" class="item">پلی لیست</a></li>
                     <li><a href="#" class="item">درباره ما</a></li>
-                    <li><a href="#" class="item buttonNav">ثبت نام | ورود</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}" class="item buttonNav logout">Logout</a></li> 
+                    {% else %}
+                        <li><a href="{% url 'login'  %}" class="item buttonNav">ثبت نام | ورود</a></li>
+                    {% endif %}
                 </ul>
                 <div class="item-search"><form class="search-form" action=""><input type="text" placeholder="جستوجوی آهنگ,هنرمند"><button class="search"></button></form></div>
             </div>

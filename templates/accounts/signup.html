@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container noMargin container-center margin90t">
+        <div class="form-hub" style="width: 310px;">
+            <p>ثبت نام</p>
+            <form action="{% url 'register' %}" method="POST" style="margin-top: 10px;">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary" type="submit" style="margin-top: 10px;">ثبت نام</button>
+            </form>
+            <div style="margin-bottom: 10px;">اکانت دارید؟<a href="{% url 'login' %}">ورود</a></div>
+        </div>
+    </div>
+{% endblock content %}
+    
