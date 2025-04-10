@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container noMargin container-center margin90t">
+        <div class="form-hub" >
+            <p>نظر شما درباره آهنگ</p>
+            <form action="." method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-success">تایید</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

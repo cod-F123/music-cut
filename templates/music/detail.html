@@ -36,7 +36,7 @@
             
                 <div class="comments-hub">
                     <p>نظرات</p>
-                    <a href="/" class="btn n-comment"><span>+</span></a>
+                    <a href="{% url 'music:create_comment' audio.slug %}" class="btn n-comment"><span>+</span></a>
                     <div>
                         {% for comment in audio.comment_set.all %}
                             <div class="comment-sm">
