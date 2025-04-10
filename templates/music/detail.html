@@ -36,6 +36,16 @@
             
                 <div class="comments-hub">
                     <p>نظرات</p>
+                    <a href="/" class="btn n-comment"><span>+</span></a>
+                    <div>
+                        {% for comment in audio.comment_set.all %}
+                            <div class="comment-sm">
+                                <div>{{comment.user}} :</div>
+                                <p>{{comment.content}}</p>
+                            </div>
+                        {% endfor %}
+                        
+                    </div>
                 </div>
         </div>
         <div class="label"> <span class="item-more"><a href="#">بیشتر <span class="un-line"></span></a></span> بیشتر از {{audio.singer}}</div>

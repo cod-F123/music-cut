@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 import random
 
 # Create your models here.
@@ -56,4 +57,12 @@ class Audio(models.Model):
             self.save()
 
 
+
+class Comment(models.Model):
+    audio = models.ForeignKey(Audio,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    content = models.CharField(max_length=300)
+    date_create = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return self.user.username

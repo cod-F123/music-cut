@@ -1,5 +1,5 @@
 from django.contrib import admin 
-from .models import Category , Singer , Audio
+from .models import Category , Singer , Audio , Comment
 
 # Register your models here.
 
@@ -15,3 +15,8 @@ class SingerAdmin(admin.ModelAdmin):
 class AudioAdmin(admin.ModelAdmin):
     list_display = ["name","singer","category"]
     readonly_fields = ["date_add","slug"]
+    
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ["user","audio"]
+    readonly_fields = ["date_create"]
