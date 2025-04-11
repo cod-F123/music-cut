@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container container-center noMargin margin90t">
+       <div class="de-head">
+           <h1> {{category.name}} </h1>
+       </div>
+       <div class="container-flex">
+            {% for audio in category.audio_set.all %}
+                <div class="audio-cart">
+                    <a href="{% url 'music:detail' audio.slug %}"><img src="{{audio.image.url}}" alt="img"></a>
+                    <div class="descript">
+                        <span><a href="/" class="name">{{audio.name}}</a></span>
+                        <span><a href="/">{{audio.singer}}</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+       </div>
+    </div>
+{% endblock content %}
+    

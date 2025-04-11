@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse , reverse_lazy
-from .models import Audio
+from .models import Audio , Category
 from .forms import CommentForm
 
 # Create your views here.
@@ -40,6 +40,18 @@ def crete_comment(request,slug):
     else:
         return redirect("login")
     
+
+def categories_page(request):
+    categories = Category.objects.all()
+    return render(request,"music/categories.html",{"categories":categories})
+
+
+def category_page(request,name):
+    category = Category.objects.filter(name= name).first()
+    if category:
+        return render(request,"music/category.html",{"category":category})
+    else:
+        return redirect("music:404")
 
 def page_404(request):
     return render(request,"music/404.html",{})

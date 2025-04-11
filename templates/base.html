@@ -14,7 +14,7 @@
             <div>
                 <ul class="list-item">
                     <li><a href="{% url 'music:home' %}" class="item home">خانه</a></li>
-                    <li><a href="#" class="item">دسته بندی ها</a></li>
+                    <li><a href="{% url 'music:categories' %}" class="item">دسته بندی ها</a></li>
                     <li><a href="#" class="item">پلی لیست</a></li>
                     <li><a href="#" class="item">درباره ما</a></li>
                     {% if user.is_authenticated %}

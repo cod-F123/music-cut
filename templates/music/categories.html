@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container container-center noMargin margin90t">
+        <div class="container-flex">
+            {% for category in categories %}
+                <a href="{% url 'music:category' category.name %}" class="category-a">
+                    <div>
+                        <p>{{category.name}}</p>
+                        <span>آهنگ {{category.audio_set.all.count}}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+    
